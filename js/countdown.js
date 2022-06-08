@@ -1,11 +1,35 @@
 class CountDown {
     constructor(expiredDate, onComplete) {
-        this.expiredDate = expiredDate,
-        this.onComplete = onComplete
+        this.setExpiredDate(expiredDate);
+        this.onComplete = onComplete;
     }
 
     setExpiredDate(expiredDate) {
-        this.remainingTime = expiredDate.getTime() - (new Date()).getTime()
-        this.remainingTime > 0 ? this.start() : this.complete()
+        let currentTime = (new Date()).getTime()
+        this.remainingTime = expiredDate.getTime() - currentTime
+        this.remainingTime > 0 ? this.start() : this.onComplete()
     }
+
+    start() {
+        console.log("in start")
+        const intervalId = setInterval(() => {
+            this.remainingTime -= 1000
+            console.log("rem time: ", this.remainingTime)
+            //this.onRender(this.getTime())
+            if (this.remainingTime < 0){
+                this.onComplete() //complete() in code
+                clearInterval(intervalId)
+            }
+        }, 1000)
+    }
+
+    getTime() {
+        return {
+            days: Math.floor(this.remainingTime / 1000 / 60 / 60 / 24),
+            hours: Math.floor(this.remainingTime / 1000 / 60 / 60) % 24,
+            minutes: Math.floor(this.remainingTime / 1000 / 60) % 60,
+            seconds: Math.floor(this.remainingTime / 1000) % 60
+        }
+    }
+    
 }
