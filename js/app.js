@@ -45,52 +45,9 @@ const countDown = new CountDown(
                     </div>
                 </div>
             </div>`
-    },  
-    () => {})
-const countDownTime = countDown.getTime()
+    },
+    () => {
+        countDownWrapperHTML.innerHTML = `<p>Message to display when done</p>`
+    }
+)
 
-//const onRender = (countDownTime) => {}
-
-// countDownWrapperHTML.innerHTML =  
-//     `<div class="NormalClock">
-//         <div class="NormalUnitContainer">
-//             <div class="NormalupperCard">
-//                 <span>${countDownTime.days}</span>
-//             </div>
-//             <div class="digitLabel">
-//                 <label>
-//                     <span>days</span>
-//                 </label>
-//             </div>
-//         </div>
-//         <div class="NormalUnitContainer">
-//             <div class="NormalupperCard">
-//                 <span>${countDownTime.hours}</span>
-//             </div>
-//             <div class="digitLabel">
-//                 <label>
-//                     <span>hours</span>
-//                 </label>
-//             </div>
-//         </div>
-//         <div class="NormalUnitContainer">
-//             <div class="NormalupperCard">
-//                 <span>${countDownTime.minutes}</span>
-//             </div>
-//             <div class="digitLabel">
-//                 <label>
-//                     <span>minutes</span>
-//                 </label>
-//             </div>
-//         </div>
-//         <div class="NormalUnitContainer">
-//             <div class="NormalupperCard">
-//                 <span>${countDownTime.seconds}</span>
-//             </div>
-//             <div class="digitLabel">
-//                 <label>
-//                     <span>seconds</span>
-//                 </label>
-//             </div>
-//         </div>
-//     </div>`

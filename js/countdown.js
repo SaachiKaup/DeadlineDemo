@@ -12,6 +12,7 @@ class CountDown {
     }
 
     start() {
+        console.log("remaining time: ", this.remainingTime)
         const intervalId = setInterval(() => {
             this.remainingTime -= 1000;
             this.onRender(this.getTime())
