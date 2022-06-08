@@ -14,7 +14,7 @@ class CountDown {
     start() {
         const intervalId = setInterval(() => {
             this.remainingTime -= 1000;
-            //this.onRender(this.getTime())
+            this.onRender(this.getTime())
             if (this.remainingTime < 0){
                 this.onComplete() //complete() in code
                 clearInterval(intervalId)
