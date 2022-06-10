@@ -51,3 +51,14 @@ const countDown = new CountDown(
     }
 )
 
+const notifyButton = document.querySelector("#___gatsby > div > div > section > div.Container-sc-1ab0bzv-0.iMlVqW.mainContainer > div > div.fourstyle__ContactFormWrap-sc-1qfzxsa-5.eXbrgY > form > button")
+notifyButton.addEventListener('click', () => {
+    let userEmail = getUserEmail()
+})
+
+const getUserEmail = () => {
+    const emailInputElement = document.querySelector("#user_email")
+    const userEmail = emailInputElement.value
+    return userEmail  
+}
+
