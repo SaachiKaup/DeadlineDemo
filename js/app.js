@@ -1,8 +1,8 @@
-const countDownWrapperHTML = document.querySelector('#___gatsby > div > div > section > div.Container-sc-1ab0bzv-0.iMlVqW.mainContainer > div > div.fourstyle__NormalClockWrapper-sc-1qfzxsa-3.jpMizN')
+const countDownWrapper = document.querySelector('#___gatsby > div > div > section > div.Container-sc-1ab0bzv-0.iMlVqW.mainContainer > div > div.fourstyle__NormalClockWrapper-sc-1qfzxsa-3.jpMizN')
 const countDown = new CountDown(
     new Date('7/15/22'), 
     (countDownTime) => {
-        countDownWrapperHTML.innerHTML =  
+        countDownWrapper.innerHTML =  
             `<div class="NormalClock">
                 <div class="NormalUnitContainer">
                     <div class="NormalupperCard">
@@ -47,7 +47,7 @@ const countDown = new CountDown(
             </div>`
     },
     () => {
-        countDownWrapperHTML.innerHTML = `<p>Message to display when done</p>`
+        countDownWrapper.innerHTML = `<p>Message to display when done</p>`
     }
 )
 

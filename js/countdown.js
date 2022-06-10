@@ -12,12 +12,11 @@ class CountDown {
     }
 
     start() {
-        console.log("remaining time: ", this.remainingTime)
         const intervalId = setInterval(() => {
             this.remainingTime -= 1000;
         this.onRender(this.getDisplayTime())
             if (this.remainingTime < 0){
-                this.onComplete() //complete() in code
+                this.onComplete() 
                 clearInterval(intervalId)
             }
         }, 1000)
@@ -34,9 +33,7 @@ class CountDown {
 
     getDisplayTime() {
         let countDownTimeObj = this.getTime()
-        console.log("BF: ", countDownTimeObj)
         for(let key in countDownTimeObj)   {
-            console.log("key: ", countDownTimeObj[key])
             if (countDownTimeObj[key] < 10) {
                 countDownTimeObj[key] = '0' + String(countDownTimeObj[key])
             }
